@@ -7,7 +7,9 @@
     "test": "test",
     "watch": "webpack -d --watch",
     "build": "webpack",
-    "start": "node index.js"
+    "server": "node index.js",
+    "dev": "webpack-dev-server --hot --inline",
+    "start": "concurrently \"npm run dev\" \"npm run server\""
   },
   "keywords": [
     "react-router"
@@ -20,7 +22,9 @@
     "babel-preset-react": "^6.11.1",
     "express": "^4.14.0",
     "serve": "^1.4.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "concurrently": "^2.2.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "react": "^15.3.2",
