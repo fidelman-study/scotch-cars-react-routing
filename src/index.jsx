@@ -6,14 +6,17 @@ import { Router, Route, Redirect, IndexRedirect, IndexRoute, hashHistory, browse
 import Home from './common/home.component.jsx';
 import About from './common/about.component.jsx';
 import Car from './car/car.component.jsx';
-
+import Main from './common/main.component.jsx';
 
 
 render(
-    <Router history={hashHistory}>
-        <Route path="/" component={Home} />
-        <Route path="/car" component={Car} />
-        <Route path="/about" component={About} />
+    <Router  history={browserHistory}>
+        <Route path="/" component={Main}>
+            <IndexRoute component={Home} />
+            <Route path="/cars" component={Car} />
+            <Route path="/about" component={About} />
+        </Route>
+
     </Router>
 
 
