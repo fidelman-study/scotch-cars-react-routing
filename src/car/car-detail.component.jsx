@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 class CarDetail extends Component {
+
+    handleRedirect(){
+        browserHistory.push('/cars');
+    }
+
     render(){
         // Car array
         const cars = this.props.route.data;
@@ -29,6 +35,9 @@ class CarDetail extends Component {
                             <li><strong>Year</strong>: {car[0].year}</li>
                             <li><strong>Price</strong>: {car[0].price}</li>
                         </ul>
+                    </div>
+                    <div className="col-md-12">
+                        <button className="btn btn-default" onClick={this.handleRedirect.bind(this)}>Go to Cars</button>
                     </div>
                 </div>
             </div>
